@@ -2,7 +2,7 @@ project(
     'libaco',
     'c',
     version: '1.0',
-    default_options: ['warning_level=2', 'optimization=2'],
+    default_options: ['warning_level=3'],
 )
 
 libco_sources  = [
@@ -12,7 +12,7 @@ libco_sources  = [
 libco = static_library(
     'libco',
     libco_sources,
-    c_args: ['-fomit-frame-pointer', '-std=c89'],
+    c_args: ['-fomit-frame-pointer', '-std=c89', '-O3', '-Wdeclaration-after-statement'],
 )
 
 libco_dep = declare_dependency(
